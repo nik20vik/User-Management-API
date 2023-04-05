@@ -1,0 +1,46 @@
+<!-- To add the header and footer together -->
+
+<!-- include header -->
+<%- include('include/_header') %>
+<!-- /include header -->
+
+<main id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex justify-between">
+      <a href="/add-user" class="border-shadow">
+        <!-- Importing the icons using cndjs.com -->
+        <!-- linking the font using content delivery network -->
+        <span class="text-gradient"
+          >New User <i class="fa-solid fa-user"></i
+        ></span>
+      </a>
+    </div>
+
+    <!-- Form handling -->
+    <form action="/" method="POST">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- include('include/_show') %>
+        </tbody>
+      </table>
+    </form>
+
+    <!-- Adding the users data from the database -->
+    <!-- To iterate over all the users we need to make loop inside the _show.ejs -->
+    <!-- <%= users %> -->
+  </div>
+</main>
+
+<!-- include footer -->
+<%- include('include/_footer') %>
+<!-- /include footer -->
