@@ -5,7 +5,7 @@ const axios = require("axios");
 exports.homeRoutes = (req, res) => {
   // Make a get request to /api/users
   axios
-    .get("/api/users")
+    .get("https://user-management-u9he.onrender.com/api/users/")
     .then(function (response) {
       res.render("index", { users: response.data });
     })
@@ -21,7 +21,9 @@ exports.add_user = (req, res) => {
 exports.update_user = (req, res) => {
   // We have to render the data as well so we will shift the render in the end inside the axios with userdata
   axios
-    .get("/api/users/", { params: { id: req.query.id } })
+    .get("https://user-management-u9he.onrender.com/api/users/", {
+      params: { id: req.query.id },
+    })
     .then(function (userdata) {
       res.render("update_user", { user: userdata.data });
     })
